@@ -38,7 +38,7 @@
                             <div class="collapse" id="base">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="<?= site_url() ?>">
+                                        <a href="<?= site_url('user') ?>">
                                             <span class="sub-item">Data User</span>
                                         </a>
                                     </li>
