@@ -43,7 +43,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="<?= site_url() ?>">
+                                        <a href="<?= site_url('kelas') ?>">
                                             <span class="sub-item">Data Kelas</span>
                                         </a>
                                     </li>
