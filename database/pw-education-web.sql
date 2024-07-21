@@ -77,6 +77,28 @@ INSERT INTO `tbl_data_user` (`id_user`, `nama_user`, `email_user`, `password_use
 --
 -- Indexes for dumped tables
 --
+--
+-- Table structure for table `tbl_data_pelajaran`
+--
+
+CREATE TABLE `tbl_data_pelajaran` (
+  `id_pelajaran` int NOT NULL,
+  `kode_pelajaran` varchar(10) NOT NULL,
+  `nama_pelajaran` varchar(255) NOT NULL,
+  `deskripsi` text,
+  `kategori` enum('Ilmu Komputer','Ekonomi','Bahasa') NOT NULL,
+  `pengajar` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_data_pelajaran`
+--
+
+INSERT INTO `tbl_data_pelajaran` (`id_pelajaran`, `kode_pelajaran`, `nama_pelajaran`, `deskripsi`, `kategori`, `pengajar`) VALUES
+(1, 'PW401', 'Pemograman Web 1', 'Pengenalan HTML', 'Ilmu Komputer', 'Riad Sahara, S.SI, MT'),
+(2, 'PLSQL202', 'Pemograman PL/SQL', 'Pemograman PL/SQL Pengenalan Structural Query Language(SQL)', 'Ilmu Komputer', 'Cian Ramadhona Hassolthine,S.Kom,M.Kom');
+
+-- --------------------------------------------------------
 
 --
 -- Indexes for table `tbl_data_materi`
@@ -89,6 +111,12 @@ ALTER TABLE `tbl_data_materi`
 --
 ALTER TABLE `tbl_data_user`
   ADD PRIMARY KEY (`id_user`);
+
+--
+-- Indexes for table `tbl_data_pelajaran`
+--
+ALTER TABLE `tbl_data_pelajaran`
+  ADD PRIMARY KEY (`id_pelajaran`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -105,6 +133,12 @@ ALTER TABLE `tbl_data_materi`
 --
 ALTER TABLE `tbl_data_user`
   MODIFY `id_user` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `tbl_data_pelajaran`
+--
+ALTER TABLE `tbl_data_pelajaran`
+  MODIFY `id_pelajaran` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -48,7 +48,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="<?= site_url() ?>">
+                                        <a href="<?= site_url('pelajaran') ?>">
                                             <span class="sub-item">Data Pelajaran</span>
                                         </a>
                                     </li>
