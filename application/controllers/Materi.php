@@ -82,4 +82,83 @@ class Materi extends CI_Controller {
 
         $this->template->load('index', 'pages/data-transaksi-materi/v_materi_edit', $data);
     }
+
+    public function formUpload($id_materi)
+	{
+        // proses upload
+        if(isset($_POST['upload'])) {
+            // remove file
+            array_map('unlink', glob("./uploads/$id_materi.*"));
+
+            $config['upload_path']          = './uploads/';
+            $config['allowed_types']        = 'gif|jpg|png|pdf|xls|doc|docx';
+            $config['file_name']            = $id_materi;
+            $config['max_size']             = 10000;
+            // $config['max_width']            = 1024;
+            // $config['max_height']           = 768;
+
+            $this->load->library('upload', $config);
+
+            if ( ! $this->upload->do_upload('file'))
+            {
+                $data = [
+                    'error' => $this->upload->display_errors(),
+                    'title' => 'Data Materi',
+                    'subtitle' => 'Upload Attachment Data Materi',
+                    'dataMateri' => $this->Materi_model->detailData($id_materi)->row()
+                ];
+
+                $this->template->load('index', 'pages/data-transaksi-materi/v_materi_upload', $data);
+            }
+            else
+            {   
+                $upload_data = $this->upload->data();
+
+                $data = [
+                    'file' => $upload_data['file_name'],
+                ];
+
+                $upload_success = $this->Materi_model->editData($id_materi, $data);
+
+                if( $upload_success){
+                    $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil di upload</div>');
+                    
+                    redirect('materi');
+                }
+                
+            }
+        }
+
+        // file view
+        $data = [
+            'title' => 'Data Materi',
+			'subtitle' => 'Upload Attachment Data Materi',
+            'dataMateri' => $this->Materi_model->detailData($id_materi)->row()
+        ];
+		
+        $this->template->load('index', 'pages/data-transaksi-materi/v_materi_upload', $data);
+	}
+
+    public function upload(){
+        $config['upload_path']          = './uploads/';
+        $config['allowed_types']        = 'gif|jpg|png|pdf|xls|doc|docx';
+        $config['max_size']             = 10000;
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('file'))
+        {
+            $error = array('error' => $this->upload->display_errors());
+
+            $this->load->view('upload_form', $error);
+        }
+        else
+        {
+            $data = array('upload_data' => $this->upload->data());
+
+            $this->load->view('upload_success', $data);
+        }
+    }
 }

@@ -55,6 +55,10 @@
                             ?>
                         </td>
                         <td>
+                            <a href="<?= site_url('materi/formUpload/'.$key->id_materi) ?>" class="btn btn-success">
+                                <i class="fa fa-list"></i>
+                            </a>
+
                             <a href="<?= site_url('materi/edit/'.$key->id_materi) ?>" class="btn btn-warning">
                                 <i class="fa fa-edit"></i>
                             </a>
