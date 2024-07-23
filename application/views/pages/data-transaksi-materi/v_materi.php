@@ -12,6 +12,8 @@
                     <tr>
                         <th>No.</th>
                         <th>Judul</th>
+                        <th>Kelas</th>
+                        <th>Pelajaran</th>
                         <th>Status</th>
                         <th>Tanggal Dibuat</th>
                         <th>Action</th>
@@ -28,6 +30,12 @@
                         </td>
                         <td>
                             <?= $key->judul_materi ?>
+                        </td>
+                        <td>
+                            <?= $key->nama_kelas ?>
+                        </td>
+                        <td>
+                            <?= $key->nama_pelajaran ?>
                         </td>
                         <td>
                             <?php 
@@ -47,6 +55,10 @@
                             ?>
                         </td>
                         <td>
+                            <a href="<?= site_url('materi/edit/'.$key->id_materi) ?>" class="btn btn-warning">
+                                <i class="fa fa-edit"></i>
+                            </a>
+
                             <a href="<?= site_url('materi/delete/'.$key->id_materi) ?>" class="btn btn-danger">
                                 <i class="fa fa-trash"></i>
                             </a>
