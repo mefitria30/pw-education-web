@@ -88,16 +88,19 @@ class Materi extends CI_Controller {
         // proses upload
         if(isset($_POST['upload'])) {
             // remove file
-            array_map('unlink', glob("./uploads/$id_materi.*"));
+            // array_map('unlink', glob("./uploads/$id_materi.*"));
 
             $config['upload_path']          = './uploads/';
-            $config['allowed_types']        = 'gif|jpg|png|pdf|xls|doc|docx';
+            $config['allowed_types']        = 'gif|jpg|png';
             $config['file_name']            = $id_materi;
             $config['max_size']             = 10000;
+            $config['is_image']             = 1;
+            // $config['overwrite']            = TRUE;
             // $config['max_width']            = 1024;
             // $config['max_height']           = 768;
 
             $this->load->library('upload', $config);
+            $this->upload->overwrite = true;
 
             if ( ! $this->upload->do_upload('file'))
             {
@@ -108,7 +111,10 @@ class Materi extends CI_Controller {
                     'dataMateri' => $this->Materi_model->detailData($id_materi)->row()
                 ];
 
-                $this->template->load('index', 'pages/data-transaksi-materi/v_materi_upload', $data);
+                // $this->template->load('index', 'pages/data-transaksi-materi/v_materi_upload', $data);
+
+                $this->session->set_flashdata('pesan', '<div class="alert alert-success">'.$data['error'].'</div>');
+                redirect('materi/formUpload/'.$id_materi);
             }
             else
             {   
@@ -122,7 +128,6 @@ class Materi extends CI_Controller {
 
                 if( $upload_success){
                     $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil di upload</div>');
-                    
                     redirect('materi');
                 }
                 

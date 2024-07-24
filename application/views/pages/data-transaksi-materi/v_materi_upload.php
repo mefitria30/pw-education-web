@@ -1,6 +1,7 @@
-<?php if (isset($error)){
+<!-- <?php if (isset($error)){
     echo '<div class="alert alert-success">'.$error.'</div>';
-} ?>
+} ?> -->
+<?= $this->session->flashdata('pesan') ?>
 <?= form_open_multipart('materi/formUpload/'.$dataMateri->id_materi) ?>
 <div class="card">
     <div class="card-header">
@@ -23,12 +24,18 @@
                     <input type="file" class="form-control" name="file" id="file">
                 </div>
 
+                <div class="form-group">
+                    <?php if(empty($dataMateri->file)) {?>
+                    <img src="<?= base_url('./uploads/no-image.jpg'); ?>" class="img-fluid" width="50%">
+                    <?php } else {?>
+                    <img src="<?= base_url('./uploads/'.$dataMateri->file); ?>" class="img-fluid" width="50%">
+                    <?php } ?>
+                </div>
             </div>
         </div>
+        <div class=" card-action">
+            <input type="submit" class="btn btn-success" name="upload" value="Upload">
+            <a href="<?= site_url('materi')?>" class="btn btn-danger">Cancel</a>
+        </div>
     </div>
-    <div class="card-action">
-        <input type="submit" class="btn btn-success" name="upload" value="Upload">
-        <a href="<?= site_url('materi')?>" class="btn btn-danger">Cancel</a>
-    </div>
-</div>
-<?= form_close() ?>
+    <?= form_close() ?>
