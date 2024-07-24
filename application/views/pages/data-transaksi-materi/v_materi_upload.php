@@ -1,5 +1,5 @@
 <?php if (isset($error)){
-    echo $error;
+    echo '<div class="alert alert-success">'.$error.'</div>';
 } ?>
 <?= form_open_multipart('materi/formUpload/'.$dataMateri->id_materi) ?>
 <div class="card">
