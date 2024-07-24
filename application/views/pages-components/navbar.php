@@ -24,7 +24,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">Logout</a>
+                                        <a class="dropdown-item" href="<?= site_url('auth/logout') ?>">Logout</a>
                                     </li>
                                 </div>
                             </ul>

@@ -6,6 +6,10 @@ class User extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('User_model');
+
+        if($this->session->userdata('level_user') !== 'admin'){
+			redirect('auth');
+		}
     }
 
     public function index() {
@@ -29,7 +33,8 @@ class User extends CI_Controller {
         $data = [
             'nama_user' => $this->input->post('nama_user'),
             'email_user' => $this->input->post('email_user'),
-            'password_user' => password_hash($this->input->post('password_user'), PASSWORD_BCRYPT),
+            // 'password_user' => password_hash($this->input->post('password_user'), PASSWORD_BCRYPT),
+            'password_user' => $this->input->post('password_user'),
             'level_user' => $this->input->post('level_user')
         ];
 
@@ -51,7 +56,8 @@ class User extends CI_Controller {
         $data = [
             'nama_user' => $this->input->post('nama_user'),
             'email_user' => $this->input->post('email_user'),
-            'password_user' => password_hash($this->input->post('password_user'), PASSWORD_BCRYPT),
+            // 'password_user' => password_hash($this->input->post('password_user'), PASSWORD_BCRYPT),
+            'password_user' => $this->input->post('password_user'),
             'level_user' => $this->input->post('level_user')
         ];
 

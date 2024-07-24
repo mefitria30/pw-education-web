@@ -6,6 +6,10 @@ class Kelas extends CI_Controller {
         $this->load->model('Kelas_model');
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
+
+        if($this->session->userdata('level_user') !== 'admin'){
+			redirect('auth');
+		}
     }
     
     // public function index() {

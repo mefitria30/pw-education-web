@@ -6,6 +6,10 @@ class Pelajaran extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Pelajaran_model');
+
+        if($this->session->userdata('level_user') !== 'admin'){
+			redirect('auth');
+		}
     }
 
     public function index() {
