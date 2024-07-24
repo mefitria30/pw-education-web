@@ -32,9 +32,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="isi_materi">Isi Materi</label>
-                    <textarea name="isi_materi" id="isi_materi" class="form-control" cols="30" rows="10"
-                        required></textarea>
+                    <label for="id_materi">Isi Materi</label>
+                    <textarea name="isi_materi" id="isi_materi" class="form-control" cols="30" rows="10"></textarea>
                 </div>
             </div>
         </div>
