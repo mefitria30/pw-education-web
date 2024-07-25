@@ -9,8 +9,10 @@
                         <div class="info">
                             <a href="<?= site_url(); ?>">
                                 <span>
-                                    John Doe
-                                    <span class=" user-level">Administrator</span>
+                                    <?= $this->session->userdata('nama_user'); ?>
+                                    <span class=" user-level">
+                                        <?= $this->session->userdata('level_user'); ?>
+                                    </span>
                                 </span>
                             </a>
                             <div class="clearfix"></div>

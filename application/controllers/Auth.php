@@ -14,7 +14,7 @@ class Auth extends CI_Controller {
 			'subtitle' => 'Dashboard',
 		];
 
-		$this->load->view('pages/login/v_login', $data);
+		$this->template->load('v_login', 'pages/login/v_login_form', $data);
 	}
 
 	public function processLogin()
@@ -52,4 +52,26 @@ class Auth extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('auth', 'refresh');
 	}
+
+	public function register() {
+        $data = [
+            'title' => 'Add User',
+            'subtitle' => 'Form Add User'
+        ];
+        $this->template->load('v_login', 'pages/login/v_register', $data);
+    }
+
+	public function add_process() {
+        $data = [
+            'nama_user' => $this->input->post('nama_user'),
+            'email_user' => $this->input->post('email_user'),
+            // 'password_user' => password_hash($this->input->post('password_user'), PASSWORD_BCRYPT),
+            'password_user' => $this->input->post('password_user'),
+            'level_user' => $this->input->post('level_user')
+        ];
+
+        $this->Auth_model->add_user($data);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil ditambahkan</div>');
+        redirect('auth', 'refresh');
+    }
 }

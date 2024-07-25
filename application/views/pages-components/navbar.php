@@ -17,8 +17,8 @@
                                             <div class="avatar-lg"><img src="<?= base_url();?>/assets/img/user.jpg"
                                                     alt="image profile" class="avatar-img rounded"></div>
                                             <div class="u-text">
-                                                <h4>John Doe</h4>
-                                                <p class="text-muted">john.doe@example.com</p>
+                                                <h4><?= $this->session->userdata('nama_user'); ?></h4>
+                                                <p class="text-muted"><?= $this->session->userdata('email_user'); ?></p>
 
                                             </div>
                                         </div>
