@@ -37,33 +37,35 @@
 <body>
     <div class="wrapper overlay-sidebar">
         <div class="main-header">
-            <?php require_once(APPPATH.'/views/pages-components-login/main-header.php'); ?>
+            <?php require_once(APPPATH.'/views/pages-components-member/main-header.php'); ?>
         </div>
 
         <div class="main-panel">
             <div class="content">
                 <div class="panel-header bg-primary-gradient">
                     <div class="page-inner py-5">
+                        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                            <div>
+                                <h2 class="text-white pb-2 fw-bold"><?= $title?></h2>
+                                <h5 class="text-white op-7 mb-2"><?= $this->session->userdata('nama_user'); ?></h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="page-inner mt--5">
-                    <div class="row">
-                        <div class="col-md-3">
-                        </div>
-                        <div class="col-md-6">
+                    <div class="row row-card-no-pd mt--2">
+                        <div class="col-md-12">
                             <?= $content ?>
-                        </div>
-                        <div class="col-md-3">
                         </div>
                     </div>
                 </div>
             </div>
 
             <footer class="footer">
-                <?php require_once(APPPATH.'/views/pages-components-login/footer.php'); ?>
+                <?php require_once(APPPATH.'/views/pages-components-member/footer.php'); ?>
             </footer>
         </div>
-
     </div>
     <!--   Core JS Files   -->
     <script src="<?= base_url();?>/assets/js/core/jquery.3.2.1.min.js"></script>
@@ -104,8 +106,8 @@
     <script src="<?= base_url();?>/assets/js/atlantis.min.js"></script>
 
     <!-- Atlantis DEMO methods, don't include it in your project! -->
-    <!-- <script src="<?= base_url();?>/assets/js/setting-demo.js"></script> -->
-    <!-- <script src="<?= base_url();?>/assets/js/demo.js"></script> -->
+    <!-- <script src="<?= base_url();?>/assets/js/setting-demo.js"></script>
+    <script src="<?= base_url();?>/assets/js/demo.js"></script> -->
     <script>
     $('#lineChart').sparkline([102, 109, 120, 99, 110, 105, 115], {
         type: 'line',

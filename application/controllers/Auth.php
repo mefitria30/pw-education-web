@@ -32,6 +32,8 @@ class Auth extends CI_Controller {
 		$row = $check->row();
 		$total = $check->num_rows();
 
+		// echo print_r($row->level_user);
+
 		if($total > 0){
 			$this->session->set_userdata([
 				'email_user' => $row->email_user,
@@ -39,8 +41,13 @@ class Auth extends CI_Controller {
 				'level_user' => $row->level_user,
 			]);	
 
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success">Login Berhasil</div>');
-			redirect('home', 'refresh');
+			if ($row->level_user == 'admin') {
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success">Login Berhasil</div>');
+				redirect('home', 'refresh');
+			} else if ($row->level_user == 'user') {
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success">Login Berhasil</div>');
+				redirect('member', 'refresh');
+			}
 		} else {
 			$this->session->set_flashdata('pesan', '<div class="alert alert-danger">Login Gagal</div>');
 			redirect('auth', 'refresh');
