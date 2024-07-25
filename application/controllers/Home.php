@@ -5,6 +5,7 @@ class Home extends CI_Controller {
 	public function __construct(){
         parent::__construct();
         if($this->session->userdata('level_user') !== 'admin'){
+			$this->session->set_flashdata('pesan', '<div class="alert alert-danger">Silakan login terlebih dahulu</div>');
 			redirect('auth');
 		}
     }

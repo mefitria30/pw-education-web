@@ -8,6 +8,7 @@ class Kelas extends CI_Controller {
         $this->load->library('form_validation');
 
         if($this->session->userdata('level_user') !== 'admin'){
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger">Silakan login terlebih dahulu</div>');
 			redirect('auth');
 		}
     }

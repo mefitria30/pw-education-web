@@ -8,6 +8,7 @@ class User extends CI_Controller {
         $this->load->model('User_model');
 
         if($this->session->userdata('level_user') !== 'admin'){
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger">Silakan login terlebih dahulu</div>');
 			redirect('auth');
 		}
     }

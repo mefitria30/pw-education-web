@@ -7,6 +7,7 @@ class Materi extends CI_Controller {
         parent::__construct();
         $this->load->model('Materi_model');
         if($this->session->userdata('level_user') !== 'admin'){
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger">Silakan login terlebih dahulu</div>');
 			redirect('auth');
 		}
     }
