@@ -1,8 +1,8 @@
 <?= form_open('auth/add_process') ?>
 <div class="card">
     <div class="card-header">
-        <div class="card-title">Form Add User</div>
-        <?= $this->session->flashdata('pesan'); ?>
+        <div class="card-title">Edu Web UNSIA | REGISTER</div>
+        <?= $this->session->flashdata('pesan') ?>
     </div>
     <div class="card-body">
         <div class="row">
@@ -33,8 +33,8 @@
         </div>
     </div>
     <div class="card-action">
-        <input type="submit" class="btn btn-success" name="submit" value="Submit">
-        <a href="<?= site_url('auth') ?>" class="btn btn-danger">Cancel</a>
+        <input type="submit" class="btn btn-info btn-lg btn-block" name="submit" value="Register">
+        <a href="<?= site_url('auth') ?>" class="btn btn-danger btn-lg btn-block">Cancel</a>
     </div>
 </div>
 <?= form_close() ?>
