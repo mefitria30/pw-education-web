@@ -4,6 +4,9 @@
 				            <div class="ml-md-auto py-2 py-md-0">
 				                <a href="<?= site_url('member/detailMateriKelas/'.$dataMateri->id_kelas)?>"
 				                    class="btn btn-info btn-round">List Materi</a>
+
+				                <a href="<?= site_url('member/listDiskusi/'.$dataMateri->id_materi)?>"
+				                    class="btn btn-info btn-round">Diskusi</a>
 				            </div>
 				        </div>
 				    </div>

@@ -28,4 +28,29 @@ class Auth_model extends CI_Model
         ');
         return $query->result();
     }
+
+    public function getListDiskusi($id_materi)
+    {
+        $query = $this->db->query('
+            SELECT
+                tbl_data_user.nama_user,
+                tbl_data_materi.judul_materi,
+                tbl_data_diskusi.*
+            FROM
+                `tbl_data_diskusi`
+            LEFT JOIN tbl_data_user ON tbl_data_user.id_user = tbl_data_diskusi.id_user
+            left join tbl_data_materi on tbl_data_materi.id_materi = tbl_data_diskusi.id_materi
+            where tbl_data_diskusi.id_materi = '.$id_materi.'
+            order by tbl_data_diskusi.created_at desc;;
+        ');
+        return $query->result();
+    }
+
+    public function addData($data){
+        return $this->db->insert('tbl_data_diskusi', $data);
+    }
+
+    public function deleteData($id_diskusi){
+        return $this->db->delete('tbl_data_diskusi', ['id_diskusi' => $id_diskusi]);
+    }
 }

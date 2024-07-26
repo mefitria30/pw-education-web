@@ -48,4 +48,35 @@ class Member extends CI_Controller {
 
         $this->template->load('v_user', 'pages/member/materi-detail', $data);
     }
+
+	public function listDiskusi($id_materi)
+    {
+
+        $data = [
+            'title' => 'Data Materi',
+			'subtitle' => 'Edit Data Materi',
+			'dataMateri' => $id_materi,
+			'materiDiskusi' => $this->Auth_model->getListDiskusi($id_materi),
+        ];
+
+        $this->template->load('v_user', 'pages/member/materi-diskusi', $data);
+    }
+
+	public function add_diskusi()
+    {
+        $data = [
+            'txt_diskusi'      => $this->input->post('txt_diskusi'),
+            'id_user'           => $this->input->post('id_user'),
+            'id_materi'          => $this->input->post('id_materi')              
+        ];
+
+        $this->Auth_model->addData($data);
+        redirect('member/listDiskusi/'.$data['id_materi']);
+    }
+
+	public function delete_diskusi($id_diskusi, $id_materi)
+    {
+        $this->Auth_model->deleteData($id_diskusi);
+        redirect('member/listDiskusi/'.$id_materi);
+    }
 }
