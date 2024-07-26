@@ -26,7 +26,7 @@
     </div>
     <div class="card-action">
         <input type="submit" class="btn btn-primary btn-lg btn-block" name="login" value="Login">
-        <a href="<?= site_url('auth/register') ?>" class="btn btn-secondary btn-lg btn-block">Register?</a>
+        <a href="<?= site_url('auth/register') ?>" class="btn btn-info btn-lg btn-block">Register?</a>
     </div>
 </div>
 <?= form_close(); ?>

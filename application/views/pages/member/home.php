@@ -26,7 +26,11 @@
                                         </a>
                                     </h1>
                                     <p class="card-text"><?php echo $kls->deskripsi; ?></p>
-                                    <a href="#" class="btn btn-primary btn-rounded btn-sm">Detail Kelas</a>
+
+                                    <a href="<?= site_url('member/detailMateriKelas/'.$kls->id_kelas) ?>"
+                                        class="btn btn-primary btn-rounded btn-sm">
+                                        Detail Materi
+                                    </a>
                                 </div>
                             </div>
                         </td>

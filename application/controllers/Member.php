@@ -9,6 +9,8 @@ class Member extends CI_Controller {
 			redirect('auth');
 		}
 		$this->load->model('Kelas_model');
+		$this->load->model('Materi_model');
+		$this->load->model('Auth_model');
     }
 
 	public function index()
@@ -22,4 +24,16 @@ class Member extends CI_Controller {
 
 		$this->template->load('v_user', 'pages/member/home', $data);
 	}
+
+	public function detailMateriKelas($id_kelas)
+    {
+
+        $data = [
+            'title' => 'Data Materi',
+			'subtitle' => 'Edit Data Materi',
+            'materiKelas' => $this->Auth_model->getDataMateriKelas($id_kelas),
+        ];
+
+        $this->template->load('v_user', 'pages/member/materi-kelas', $data);
+    }
 }
