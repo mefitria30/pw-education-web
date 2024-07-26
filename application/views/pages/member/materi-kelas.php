@@ -38,7 +38,8 @@
 				                                        <div class="job"><?= $row->nama_kelas?></div>
 				                                        <div class="desc"><?= $row->nama_pelajaran?></div>
 				                                        <div class="view-profile">
-				                                            <a href="#" class="btn btn-info btn-block">Detail Materi</a>
+				                                            <a href="<?= site_url('member/detailMateri/'.$row->id_materi) ?>"
+				                                                class="btn btn-info btn-block">Detail Materi</a>
 				                                        </div>
 				                                    </div>
 				                                </div>

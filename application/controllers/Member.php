@@ -36,4 +36,16 @@ class Member extends CI_Controller {
 
         $this->template->load('v_user', 'pages/member/materi-kelas', $data);
     }
+
+	public function detailMateri($id_materi)
+    {
+
+        $data = [
+            'title' => 'Data Materi',
+			'subtitle' => 'Edit Data Materi',
+            'dataMateri' => $this->Materi_model->detailData($id_materi)->row(),
+        ];
+
+        $this->template->load('v_user', 'pages/member/materi-detail', $data);
+    }
 }
