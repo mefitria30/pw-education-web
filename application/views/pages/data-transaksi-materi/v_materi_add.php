@@ -35,6 +35,12 @@
                     <label for="id_materi">Isi Materi</label>
                     <textarea name="isi_materi" id="isi_materi" class="form-control" cols="30" rows="10"></textarea>
                 </div>
+
+                <input type="hidden" class="form-control" name="id_user" id="id_user"
+                    value="<?= $this->session->userdata('id_user'); ?>">
+
+                <input type="hidden" class="form-control" name="approver" id="approver"
+                    value="<?= $this->session->userdata('id_user'); ?>">
             </div>
         </div>
     </div>

@@ -10,13 +10,15 @@
                 <!-- Nama User -->
                 <div class="form-group">
                     <label for="nama_user">Name</label>
-                    <input type="text" class="form-control" name="nama_user" id="nama_user" value="<?= $user->nama_user ?>" required>
+                    <input type="text" class="form-control" name="nama_user" id="nama_user"
+                        value="<?= $user->nama_user ?>" required>
                 </div>
 
                 <!-- Email User -->
                 <div class="form-group">
                     <label for="email_user">Email</label>
-                    <input type="email" class="form-control" name="email_user" id="email_user" value="<?= $user->email_user ?>" required>
+                    <input type="email" class="form-control" name="email_user" id="email_user"
+                        value="<?= $user->email_user ?>" required>
                 </div>
 
                 <!-- Password User -->
@@ -32,7 +34,6 @@
                     <select class="form-control" name="level_user" id="level_user" required>
                         <option value="admin" <?= $user->level_user == 'admin' ? 'selected' : '' ?>>Admin</option>
                         <option value="user" <?= $user->level_user == 'user' ? 'selected' : '' ?>>User</option>
-                        <option value="member" <?= $user->level_user == 'member' ? 'selected' : '' ?>>Member</option>
                     </select>
                 </div>
             </div>

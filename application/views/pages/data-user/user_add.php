@@ -31,7 +31,6 @@
                     <select class="form-control" name="level_user" id="level_user" required>
                         <option value="admin">Admin</option>
                         <option value="user">User</option>
-                        <option value="member">Member</option>
                     </select>
                 </div>
             </div>

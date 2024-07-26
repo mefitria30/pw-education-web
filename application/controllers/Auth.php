@@ -36,6 +36,7 @@ class Auth extends CI_Controller {
 
 		if($total > 0){
 			$this->session->set_userdata([
+				'id_user' => $row->id_user,
 				'email_user' => $row->email_user,
 				'nama_user' => $row->nama_user,
 				'level_user' => $row->level_user,

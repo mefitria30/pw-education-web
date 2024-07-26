@@ -44,7 +44,9 @@ class Materi extends CI_Controller {
             'id_kelas'          => $this->input->post('id_kelas'),
             'id_pelajaran'      => $this->input->post('id_pelajaran'),
             'file'              => null,
-            'status'            => 'approved'              
+            'status'            => 'approved',
+            'id_user'           => $this->input->post('id_user'),
+            'approver'          => $this->input->post('approver')              
         ];
 
         $this->Materi_model->addData($data);
@@ -68,7 +70,9 @@ class Materi extends CI_Controller {
                 'id_kelas'          => $this->input->post('id_kelas'),
                 'id_pelajaran'      => $this->input->post('id_pelajaran'),
                 'file'              => null,
-                'status'            => 'approved'      
+                'status'            => 'approved',
+                'id_user'           => $this->input->post('id_user'),
+                'approver'          => $this->input->post('approver')
             ];
 
             $this->Materi_model->editData($id_materi, $data);
