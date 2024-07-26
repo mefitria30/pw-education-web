@@ -26,10 +26,20 @@
                         <td><?= $no++; ?></td>
                         <td><?= $user->nama_user; ?></td>
                         <td><?= $user->email_user; ?></td>
-                        <td><?= $user->level_user; ?></td>
                         <td>
-                            <a href="<?= site_url('user/edit/'.$user->id_user) ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="<?= site_url('user/delete/'.$user->id_user) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                            <?php 
+                                if($user->level_user == 'admin'){
+                                    echo 'Admin';
+                                }else if ($user->level_user == 'user'){
+                                    echo 'User';
+                                }
+                            ?>
+                        </td>
+                        <td>
+                            <a href="<?= site_url('user/edit/'.$user->id_user) ?>"
+                                class="btn btn-warning btn-sm">Edit</a>
+                            <a href="<?= site_url('user/delete/'.$user->id_user) ?>" class="btn btn-danger btn-sm"
+                                onclick="return confirm('Are you sure?')">Delete</a>
                         </td>
                     </tr>
                     <?php 

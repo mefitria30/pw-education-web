@@ -15,7 +15,7 @@
                         <th>Kelas</th>
                         <th>Pelajaran</th>
                         <th>Status</th>
-                        <th>Tanggal Dibuat</th>
+                        <th>Created At</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -42,9 +42,9 @@
                                 if($key->status == 'approved'){
                                     echo 'Approved';
                                 }else if ($key->status == 'rejected'){
-                                    'Rejected';
+                                    echo 'Rejected';
                                 } else if ($key->status == 'verification') {
-                                    'Verification';
+                                    echo 'Verification';
                                 } 
                             ?>
                         </td>
