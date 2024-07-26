@@ -10,13 +10,10 @@
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Kode Pelajaran</th>
                         <th>Nama Pelajaran</th>
                         <th>Deskripsi</th>
-                        <th>Kategori</th>
-                        <th>Pengajar</th>
                         <th>Aksi</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
@@ -29,23 +26,17 @@
                             <?= $no++; ?>
                         </td>
                         <td>
-                            <?= $pelaajaran->kode_pelajaran; ?>
-                        </td>
-                        <td>
                             <?= $pelaajaran->nama_pelajaran; ?>
                         </td>
                         <td>
                             <?= $pelaajaran->deskripsi; ?>
                         </td>
                         <td>
-                            <?= $pelaajaran->kategori; ?>
-                        </td>
-                        <td>
-                            <?= $pelaajaran->pengajar; ?>
-                        </td>
-                        <td>                            
-                            <a href="<?= site_url('pelajaran/edit/'.$pelaajaran->id_pelajaran) ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="<?= site_url('pelajaran/delete/'.$pelaajaran->id_pelajaran) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
+                            <a href="<?= site_url('pelajaran/edit/'.$pelaajaran->id_pelajaran) ?>"
+                                class="btn btn-warning btn-sm">Edit</a>
+                            <a href="<?= site_url('pelajaran/delete/'.$pelaajaran->id_pelajaran) ?>"
+                                class="btn btn-danger btn-sm"
+                                onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                         </td>
 
                     </tr>

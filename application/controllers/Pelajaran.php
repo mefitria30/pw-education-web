@@ -32,11 +32,8 @@ class Pelajaran extends CI_Controller {
 
     public function addprocess() {
         $data = [
-            'kode_pelajaran' => $this->input->post('kode_pelajaran'),
             'nama_pelajaran' => $this->input->post('nama_pelajaran'),
             'deskripsi' => $this->input->post('deskripsi'),
-            'kategori' => $this->input->post('kategori'),
-            'pengajar' => $this->input->post('pengajar'),
         ];
 
         $this->Pelajaran_model->addDatapelajaran($data);
@@ -55,11 +52,8 @@ class Pelajaran extends CI_Controller {
 
     public function editprocess($id_pelajaran) {
         $data = [
-            'kode_pelajaran' => $this->input->post('kode_pelajaran'),
             'nama_pelajaran' => $this->input->post('nama_pelajaran'),
             'deskripsi' => $this->input->post('deskripsi'),
-            'kategori' => $this->input->post('kategori'),
-            'pengajar' => $this->input->post('pengajar'),
         ];
 
         $this->Pelajaran_model->update_pelajaran($id_pelajaran, $data);

@@ -44,7 +44,7 @@ class Materi_model extends CI_Model
     {
         $query = $this->db->query('
             SELECT 
-                id_pelajaran, kode_pelajaran, nama_pelajaran
+                id_pelajaran, nama_pelajaran
             FROM tbl_data_pelajaran
             order by nama_pelajaran asc
         ');

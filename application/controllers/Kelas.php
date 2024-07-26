@@ -23,7 +23,8 @@ class Kelas extends CI_Controller {
         $data['subtitle'] = 'Manajemen Data Kelas'; 
         $data['kelas'] = $this->Kelas_model->get_all_kelas();
         $data['content'] = $this->load->view('pages/data-kelas/index', $data, true);
-        $this->load->view('index', $data);
+        // $this->load->view('index', $data);
+        $this->template->load('index', 'pages/data-kelas/index', $data);
     }    
     
     
@@ -36,7 +37,6 @@ class Kelas extends CI_Controller {
             $data = array(
                 'nama_kelas' => $this->input->post('nama_kelas'),
                 'deskripsi' => $this->input->post('deskripsi'),
-                'id_user' => $this->input->post('id_user')
             );
             $this->Kelas_model->create_kelas($data);
             redirect('Kelas/index');
@@ -56,7 +56,6 @@ class Kelas extends CI_Controller {
                 $update_data = array(
                     'nama_kelas' => $this->input->post('nama_kelas'),
                     'deskripsi' => $this->input->post('deskripsi'),
-                    'id_user' => $this->input->post('id_user')
                 );
                 $this->Kelas_model->update_kelas($id, $update_data);
                 redirect('Kelas/index');
