@@ -13,8 +13,7 @@
                 <div class="container-fluid">
                     <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                         <li class="nav-item dropdown hidden-caret">
-                            <a class="nav-link" data-toggle="dropdown" href="<?= site_url('member') ?>"
-                                aria-expanded="false">
+                            <a class="nav-link" href="<?= site_url('member/uploadMateriView') ?>">
                                 <i class="fas fa-layer-group"></i> Upload Materi
                             </a>
                         </li>

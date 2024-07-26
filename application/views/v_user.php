@@ -34,6 +34,9 @@
     <link rel="stylesheet" href="<?= base_url();?>/assets/css/demo.css">
 
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap4.css">
+    <!-- CKEditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js">
+    </script>
 </head>
 
 <body>
@@ -117,6 +120,14 @@
 
     <script>
     new DataTable('#example');
+    </script>
+
+    <script>
+    ClassicEditor
+        .create(document.querySelector('#isi_materi'))
+        .catch(error => {
+            console.error(error);
+        });
     </script>
 
     <script>

@@ -53,4 +53,19 @@ class Auth_model extends CI_Model
     public function deleteData($id_diskusi){
         return $this->db->delete('tbl_data_diskusi', ['id_diskusi' => $id_diskusi]);
     }
+
+    public function tampilData($id_user){
+
+        $query = $this->db->query('
+            select 
+                a.id_materi, b.nama_kelas, c.nama_pelajaran, a.judul_materi, a.isi_materi, a.file, a.status, a.tanggal_dibuat, a.approver 
+            from tbl_data_materi a 
+            left join tbl_data_kelas b on b.id_kelas = a.id_kelas
+            left join tbl_data_pelajaran c on c.id_pelajaran = a.id_pelajaran
+            where a.id_user = '.$id_user.'
+            order by a.judul_materi asc
+        ');
+        return $query->result();
+
+    }
 }
