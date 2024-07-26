@@ -15,7 +15,7 @@
                         <li class="nav-item dropdown hidden-caret">
                             <a class="nav-link" data-toggle="dropdown" href="<?= site_url('member') ?>"
                                 aria-expanded="false">
-                                <i class="fas fa-layer-group"></i> Data Materi
+                                <i class="fas fa-layer-group"></i> Upload Materi
                             </a>
                         </li>
 

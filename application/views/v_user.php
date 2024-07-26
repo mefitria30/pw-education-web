@@ -32,6 +32,8 @@
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="<?= base_url();?>/assets/css/demo.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap4.css">
 </head>
 
 <body>
@@ -90,7 +92,11 @@
     <script src="<?= base_url();?>/assets/js/plugin/chart-circle/circles.min.js"></script>
 
     <!-- Datatables -->
-    <script src="<?= base_url();?>/assets/js/plugin/datatables/datatables.min.js"></script>
+    <!-- <script src="<?= base_url();?>/assets/js/plugin/datatables/datatables.min.js"></script> -->
+
+    <!-- Data Table -->
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap4.js"></script>
 
     <!-- Bootstrap Notify -->
     <script src="<?= base_url();?>/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
@@ -108,6 +114,11 @@
     <!-- Atlantis DEMO methods, don't include it in your project! -->
     <!-- <script src="<?= base_url();?>/assets/js/setting-demo.js"></script>
     <script src="<?= base_url();?>/assets/js/demo.js"></script> -->
+
+    <script>
+    new DataTable('#example');
+    </script>
+
     <script>
     $('#lineChart').sparkline([102, 109, 120, 99, 110, 105, 115], {
         type: 'line',
