@@ -1,6 +1,6 @@
             <div class="logo-header" data-background-color="blue">
 
-                <a href="<?= site_url() ?>" class="logo">
+                <a href="<?= site_url('home') ?>" class="logo">
                     <!-- <img src="<?= base_url();?>/assets/img/logo.svg" alt="navbar brand" class="navbar-brand"> -->
                     <i class="Flaticon-multimedia navbar-brand" style="color:white; font-weight:bold">Edu Web</i>
                 </a>

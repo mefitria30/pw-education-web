@@ -1,6 +1,6 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="blue">
-                <a href="<?= site_url() ?>" class="logo">
+                <a href="<?= site_url('auth') ?>" class="logo">
                     <i class="Flaticon-multimedia navbar-brand" style="color:white; font-weight:bold">Edu Web</i>
                 </a>
             </div>

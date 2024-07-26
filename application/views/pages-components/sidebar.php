@@ -7,11 +7,17 @@
                                 class="avatar-img rounded-circle">
                         </div>
                         <div class="info">
-                            <a href="<?= site_url(); ?>">
+                            <a href="<?= site_url('home'); ?>">
                                 <span>
                                     <?= $this->session->userdata('nama_user'); ?>
                                     <span class=" user-level">
-                                        <?= $this->session->userdata('level_user'); ?>
+                                        <?php 
+                                            if ($this->session->userdata('level_user') == 'admin'){
+                                                echo 'Admin';
+                                            }else if ($this->session->userdata('level_user') == 'user'){
+                                                echo 'User';
+                                            }
+                                        ?>
                                     </span>
                                 </span>
                             </a>
@@ -20,7 +26,7 @@
                     </div>
                     <ul class="nav nav-primary">
                         <li class="nav-item">
-                            <a href="<?= site_url() ?>">
+                            <a href="<?= site_url('home') ?>">
                                 <i class="fas fa-home"></i>
                                 <p>Dashboard</p>
                             </a>

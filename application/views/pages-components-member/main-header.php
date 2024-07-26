@@ -1,6 +1,6 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="blue2">
-                <a href="<?= site_url() ?>" class="logo">
+                <a href="<?= site_url('member') ?>" class="logo">
                     <i class="Flaticon-multimedia navbar-brand" style="color:white; font-weight:bold">Edu Web</i>
                 </a>
                 <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>

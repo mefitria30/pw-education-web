@@ -1,7 +1,7 @@
                         <h4 class="page-title"><?= $title?></h4>
                         <ul class="breadcrumbs">
                             <li class="nav-home">
-                                <a href="<?= site_url();?>">
+                                <a href="<?= site_url('home');?>">
                                     <i class="flaticon-home"></i>
                                 </a>
                             </li>
