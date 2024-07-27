@@ -55,6 +55,8 @@
                             ?>
                         </td>
                         <td>
+                            <?php if($key->status === 'verification') {?>
+
                             <a href="<?= site_url('member/formUpload/'.$key->id_materi) ?>" class="btn btn-success">
                                 <i class="fa fa-list"></i>
                             </a>
@@ -66,6 +68,12 @@
                             <a href="<?= site_url('member/delete/'.$key->id_materi) ?>" class="btn btn-danger">
                                 <i class="fa fa-trash"></i>
                             </a>
+                            <?php } else { ?>
+                            <a href="<?= site_url('member/formApprove/'.$key->id_materi) ?>" class="btn btn-info">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <?php } ?>
+
                         </td>
                     </tr>
                     <?php }?>

@@ -177,23 +177,7 @@ class Materi extends CI_Controller {
 
     public function formApprove($id_materi)
     {
-        if(isset($_POST['edit'])){
-            $data = [
-                'judul_materi'      => $this->input->post('judul_materi'),
-                'isi_materi'        => $this->input->post('isi_materi'),
-                'id_kelas'          => $this->input->post('id_kelas'),
-                'id_pelajaran'      => $this->input->post('id_pelajaran'),
-                'file'              => null,
-                'status'            => 'approved',
-                'id_user'           => $this->input->post('id_user'),
-                'approver'          => $this->input->post('approver')
-            ];
-
-            $this->Materi_model->editData($id_materi, $data);
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil diubah</div>');
-            redirect('materi');
-        }
-
+        
         $data = [
             'title' => 'Data Materi',
 			'subtitle' => 'Edit Data Materi',
@@ -201,5 +185,17 @@ class Materi extends CI_Controller {
         ];
 
         $this->template->load('index', 'pages/data-transaksi-materi/v_materi_approve', $data);
+    }
+
+    public function approveProcess($id_materi)
+    {
+        $data = [
+            'status'            =>  $this->input->post('status'),
+            'approver'          => $this->input->post('approver')              
+        ];
+
+        $this->Materi_model->editData($id_materi, $data);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil ditambahkan</div>');
+        redirect('materi');
     }
 }

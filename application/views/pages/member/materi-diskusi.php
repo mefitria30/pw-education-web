@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="card-title fw-mediumbold">Suggested People</div>
+        <div class="card-title fw-mediumbold">Share your opini here!</div>
         <div class="card-list">
             <?php foreach ($materiDiskusi as $row) : ?>
             <div class="item-list">

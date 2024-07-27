@@ -114,7 +114,7 @@ class Member extends CI_Controller {
             'file'              => null,
             'status'            => 'verification',
             'id_user'           => $this->input->post('id_user'),
-            'approver'          => $this->input->post('approver')              
+            'approver'          => null,              
         ];
 
         $this->Materi_model->addData($data);
@@ -140,7 +140,7 @@ class Member extends CI_Controller {
                 'file'              => null,
                 'status'            => 'verification',
                 'id_user'           => $this->input->post('id_user'),
-                'approver'          => $this->input->post('approver')
+                'approver'          => null,
             ];
 
             $this->Materi_model->editData($id_materi, $data);
@@ -241,5 +241,17 @@ class Member extends CI_Controller {
 
             $this->load->view('upload_success', $data);
         }
+    }
+
+    public function formApprove($id_materi)
+    {
+
+        $data = [
+            'title' => 'Data Materi',
+			'subtitle' => 'Edit Data Materi',
+            'dataMateri' => $this->Materi_model->getDataDetailApprove($id_materi),
+        ];
+
+        $this->template->load('v_user', 'pages/member/data-transaksi-materi/v_materi_approve', $data);
     }
 }

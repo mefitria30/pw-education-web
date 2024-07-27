@@ -125,10 +125,8 @@
 					            </div>
 
 					            <div class="card-action">
-					                <?php if($key->status === 'verification') {?>
-					                <input type="submit" class="btn btn-success" name="submit" value="Submit">
-					                <?php } ?>
-					                <a href="<?= site_url('materi')?>" class="btn btn-danger">Back</a>
+
+					                <a href="<?= site_url('member/uploadMateriView') ?>" class="btn btn-danger">Back</a>
 					            </div>
 
 					        </div>
