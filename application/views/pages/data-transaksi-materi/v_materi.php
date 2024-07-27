@@ -56,7 +56,7 @@
                         </td>
                         <td>
                             <a href="<?= site_url('materi/formUpload/'.$key->id_materi) ?>" class="btn btn-success">
-                                <i class="fa fa-list"></i>
+                                <i class="fa fa-camera"></i>
                             </a>
 
                             <a href="<?= site_url('materi/edit/'.$key->id_materi) ?>" class="btn btn-warning">
@@ -65,6 +65,10 @@
 
                             <a href="<?= site_url('materi/delete/'.$key->id_materi) ?>" class="btn btn-danger">
                                 <i class="fa fa-trash"></i>
+                            </a>
+
+                            <a href="<?= site_url('materi/formApprove/'.$key->id_materi) ?>" class="btn btn-info">
+                                <i class="fa fa-eye"></i>
                             </a>
                         </td>
                     </tr>

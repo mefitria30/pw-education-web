@@ -54,4 +54,37 @@ class Materi_model extends CI_Model
     public function deleteData($id_materi){
         return $this->db->delete('tbl_data_materi', ['id_materi' => $id_materi]);
     }
+
+    public function getDataDetailApprove($id_materi)
+    {
+        $query = $this->db->query('
+            SELECT
+                a.id_materi,
+                a.id_kelas,
+                b.nama_kelas,
+                a.id_pelajaran,
+                c.nama_pelajaran,
+                a.id_user,
+                d.nama_user AS `pengaju`,
+                a.judul_materi,
+                a.isi_materi,
+                a.file,
+                a.status,
+                a.tanggal_dibuat,
+                a.approver,
+                e.nama_user AS `approver`
+            FROM
+                tbl_data_materi a
+            LEFT JOIN tbl_data_kelas b ON
+                b.id_kelas = a.id_kelas
+            LEFT JOIN tbl_data_pelajaran c ON
+                c.id_pelajaran = a.id_pelajaran
+            LEFT JOIN tbl_data_user d ON
+                d.id_user = a.id_user
+            LEFT JOIN tbl_data_user e ON
+                e.id_user = a.approver
+            WHERE a.id_materi = '.$id_materi.'
+        ');
+        return $query->result();
+    }
 }
