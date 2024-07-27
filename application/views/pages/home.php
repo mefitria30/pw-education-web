@@ -17,12 +17,14 @@
     <div class="col-md-6">
         <div class="card full-height">
             <div class="card-body">
-                <div class="card-title">Data Summary</div>
+                <div class="card-title">Data Master</div>
                 <div class="row py-3">
                     <div class="col-md-4 d-flex flex-column justify-content-around">
                         <div>
-                            <h6 class="fw-bold text-uppercase text-success op-8">Data Materi</h6>
-                            <h3 class="fw-bold">30</h3>
+                            <h6 class="fw-bold text-uppercase text-success op-8">Data Pelajaran</h6>
+                            <?php foreach ($jmlPelajaran as $key) { ?>
+                            <h3 class="fw-bold"><?= $key->jml_pelajaran ?></h3>
+                            <?php }?>
                         </div>
 
                     </div>
@@ -30,14 +32,51 @@
                     <div class="col-md-4 d-flex flex-column justify-content-around">
                         <div>
                             <h6 class="fw-bold text-uppercase text-danger op-8">Data User</h6>
-                            <h3 class="fw-bold">20</h3>
+                            <?php foreach ($jmlUser as $key) { ?>
+                            <h3 class="fw-bold"><?= $key->jml_user ?></h3>
+                            <?php }?>
                         </div>
                     </div>
 
                     <div class="col-md-4 d-flex flex-column justify-content-around">
                         <div>
                             <h6 class="fw-bold text-uppercase text-info op-8">Data Kelas</h6>
-                            <h3 class="fw-bold">10</h3>
+                            <?php foreach ($jmlKelas as $key) { ?>
+                            <h3 class="fw-bold"><?= $key->jml_kelas ?></h3>
+                            <?php }?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="card-title">Data Transaksi</div>
+                <div class="row py-3">
+                    <div class="col-md-4 d-flex flex-column justify-content-around">
+                        <div>
+                            <h6 class="fw-bold text-uppercase text-success op-8">Approved</h6>
+                            <?php foreach ($jmlApproved as $key) { ?>
+                            <h3 class="fw-bold"><?= $key->cntApproved ?></h3>
+                            <?php }?>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 d-flex flex-column justify-content-around">
+                        <div>
+                            <h6 class="fw-bold text-uppercase text-danger op-8">Rejected</h6>
+                            <?php foreach ($jmlRejected as $key) { ?>
+                            <h3 class="fw-bold"><?= $key->cntRejected ?></h3>
+                            <?php }?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex flex-column justify-content-around">
+                        <div>
+                            <h6 class="fw-bold text-uppercase text-info op-8">Verification</h6>
+                            <?php foreach ($jmlVerification as $key) { ?>
+                            <h3 class="fw-bold"><?= $key->cntVerification ?></h3>
+                            <?php }?>
                         </div>
                     </div>
                 </div>
