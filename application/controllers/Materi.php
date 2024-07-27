@@ -50,14 +50,14 @@ class Materi extends CI_Controller {
         ];
 
         $this->Materi_model->addData($data);
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil ditambahkan</div>');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data materi berhasil ditambahkan</div>');
         redirect('materi');
     }
 
     public function delete($id_materi)
     {
         $this->Materi_model->deleteData($id_materi);
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil dihapus</div>');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data materi berhasil dihapus</div>');
         redirect('materi');
     }
 
@@ -76,7 +76,7 @@ class Materi extends CI_Controller {
             ];
 
             $this->Materi_model->editData($id_materi, $data);
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil diubah</div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data materi berhasil diubah</div>');
             redirect('materi');
         }
 
@@ -135,7 +135,7 @@ class Materi extends CI_Controller {
                 $upload_success = $this->Materi_model->editData($id_materi, $data);
 
                 if( $upload_success){
-                    $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil di upload</div>');
+                    $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data materi berhasil diupload</div>');
                     redirect('materi');
                 }
                 
@@ -195,7 +195,7 @@ class Materi extends CI_Controller {
         ];
 
         $this->Materi_model->editData($id_materi, $data);
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil ditambahkan</div>');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success">Status materi sudah di '.$data['status'].'</div>');
         redirect('materi');
     }
 }

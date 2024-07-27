@@ -43,14 +43,14 @@ class Auth extends CI_Controller {
 			]);	
 
 			if ($row->level_user == 'admin') {
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success">Login Berhasil</div>');
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success">Login berhasil</div>');
 				redirect('home', 'refresh');
 			} else if ($row->level_user == 'user') {
-				$this->session->set_flashdata('pesan', '<div class="alert alert-success">Login Berhasil</div>');
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success">Login berhasil</div>');
 				redirect('member', 'refresh');
 			}
 		} else {
-			$this->session->set_flashdata('pesan', '<div class="alert alert-danger">Login Gagal</div>');
+			$this->session->set_flashdata('pesan', '<div class="alert alert-danger">Login gagal</div>');
 			redirect('auth', 'refresh');
 		}
 	}
@@ -79,7 +79,7 @@ class Auth extends CI_Controller {
         ];
 
         $this->Auth_model->add_user($data);
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success">Data berhasil ditambahkan</div>');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success">Register berhasil, silakan login</div>');
         redirect('auth', 'refresh');
     }
 }
